@@ -1,0 +1,44 @@
+<!--
+My App: https://play.google.com/store/apps/details?id=com.alonewolf.codeflash
+-->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <link rel="stylesheet" href="style2.css" type="text/css" media>
+<title>Codeflash - Rgb Color</title>
+</head>
+<body>
+
+<div id="colPick">
+<p align="center" id="colortext" ></p>
+<p>R
+  <input type="range" id="colRed" value="230" max="255"></p>
+<p>G
+<input type="range" id="colGreen" value="110" max="255"></p>
+<p>B
+<input type="range" id="colBlue" value="100" max="255"></p>
+</div>
+
+<script>
+var colR = document.getElementById("colRed");
+var colG = document.getElementById("colGreen");
+var colB = document.getElementById("colBlue");
+var colPickHTML = document.getElementById("colPick");
+  
+colPickHTML.addEventListener("input",changeCol,false);
+  
+changeCol();
+  
+function changeCol(e)
+{
+  gblR = colR.value;
+  gblG = colG.value;
+  gblB = colB.value;
+  document.body.style.backgroundColor = "rgb("+ gblR +","+ gblG +","+ gblB +")";
+  document.getElementById("colortext").innerHTML = "rgb("+ gblR +","+ gblG +","+ gblB +")";
+}
+</script>
+
+</body>
+</html>
